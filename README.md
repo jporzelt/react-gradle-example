@@ -24,4 +24,4 @@ execute
 
 Open your browser on http://localhost:3000/
 
-TODO: starting the app locks the port, workaround: `sudo kill $(sudo lsof -t -i:3000)`
+TODO: starting the app locks the port, workaround: `kill $(lsof -t -i:3000)`
