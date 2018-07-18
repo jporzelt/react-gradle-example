@@ -53,6 +53,15 @@ task buildApp(dependsOn: 'npm_install', type: NpmTask){
     }
 }
 
+task testApp(dependsOn: 'npm_install', type: NpmTask){
+    description 'Build React app'
+    args = ['run-script', 'test']
+    environment = ["CI":true]
+    execOverrides {
+        it.workingDir = appName
+    }
+}
+
 task serveApp(dependsOn: 'npm_install', type: NpmTask){
     description 'Serve React app'
     args = ['run-script', 'start']
@@ -64,8 +73,9 @@ task serveApp(dependsOn: 'npm_install', type: NpmTask){
 
 clean {
   delete file("${project.buildDir}")
+  delete file("${appName}/build")
 }
-//test.dependsOn npm_test
+test.dependsOn testApp
 war.dependsOn buildApp
 build.dependsOn buildApp
 task start(dependsOn: 'serveApp')

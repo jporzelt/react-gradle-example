@@ -18,7 +18,7 @@ set 'appName' in build.gradle then execute
 2. A war file is created in build/libs
 
 ## Run app
-set 'appName' in build.gradle then execute
+execute
 
 `./gradlew start`
 
