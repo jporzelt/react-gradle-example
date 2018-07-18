@@ -23,3 +23,5 @@ execute
 `./gradlew start`
 
 Open your browser on http://localhost:3000/
+
+TODO: starting the app locks the port, workaround: `sudo kill $(sudo lsof -t -i:3000)`
