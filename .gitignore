@@ -2,9 +2,7 @@
 .idea
 build
 *.iml
-nodejs
-npm
-**/node_modules
+node_modules
 
 # Ignore Gradle GUI config
 gradle-app.setting
